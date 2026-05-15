@@ -106,7 +106,7 @@ form.addEventListener("submit", function(e){
     const total = malam * harga;
 
     // NOMOR ADMIN
-    const admin = "6281234567890";
+    const admin = "6288290465961";
 
     // PESAN WA
     const pesan = `🏨 *BOOKING BLACKJACK ROOMS*
