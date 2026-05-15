@@ -1,0 +1,151 @@
+<!-- booking.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Form Booking Unit</title>
+
+  <link rel="stylesheet" href="booking.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>📝 Form Booking Unit</h1>
+    <p class="subtitle">Silakan isi data booking dengan benar</p>
+
+    <form id="bookingForm">
+
+      <!-- Nama -->
+      <div class="input-group">
+        <label>Nama Lengkap</label>
+        <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="input-group">
+        <label>Nomor WhatsApp</label>
+        <input type="number" id="wa" placeholder="08xxxxxxxxxx" required>
+      </div>
+
+      <!-- Tanggal Check In -->
+      <div class="input-group">
+        <label>Tanggal Check In</label>
+        <input type="text" id="checkin" placeholder="dd/mm/yyyy" required>
+      </div>
+
+      <!-- Tanggal Check Out -->
+      <div class="input-group">
+        <label>Tanggal Check Out</label>
+        <input type="text" id="checkout" placeholder="dd/mm/yyyy" required>
+      </div>
+
+      <!-- Tipe Kamar -->
+      <div class="input-group">
+        <label>Tipe Unit</label>
+
+        <select id="unit" required>
+    <option value="">-- Pilih Tipe Room --</option>
+
+    <option value="Studio - Rp300.000">
+      Studio — Rp300.000
+    </option>
+
+    <option value="VIP - Rp450.000">
+      VIP — Rp450.000
+    </option>
+
+    <option value="Eksekutif - Rp550.000">
+      Eksekutif — Rp550.000
+    </option>
+</select>
+      </div>
+
+      <!-- Metode Pembayaran -->
+<div class="input-group">
+  <label>Metode Pembayaran</label>
+
+  <select id="pembayaran" required>
+
+    <option value="">
+      -- Pilih Metode Pembayaran --
+    </option>
+
+    <option value="QRIS">
+      QRIS
+    </option>
+
+    <option value="Transfer Bank">
+      Transfer Bank
+    </option>
+
+    <option value="Transfer DANA">
+      Transfer DANA
+    </option>
+
+    <option value="Transfer OVO">
+      Transfer OVO
+    </option>
+
+  </select>
+</div>
+
+<!-- Ringkasan Booking -->
+<div class="summary-box">
+
+  <h3>📋 Ringkasan Booking</h3>
+
+  <p>
+    Lama Menginap:
+    <span id="lamaMenginap">0 Malam</span>
+  </p>
+
+  <p>
+    Total Pembayaran:
+    <span id="totalBayar">Rp0</span>
+  </p>
+
+</div>
+
+      <!-- Catatan -->
+      <div class="input-group">
+        <label>Catatan Tambahan</label>
+
+        <textarea id="catatan" rows="4" placeholder="Opsional..."></textarea>
+      </div>
+
+      <!-- Tombol -->
+      <button type="submit" class="btn-booking">
+        <i class="fa-brands fa-whatsapp"></i>
+        Kirim Booking
+      </button>
+
+    </form>
+
+  </div>
+
+  <script src="booking.js"></script>
+  <script src="booking.js"></script>
+
+  <!-- Flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+  <script>
+  flatpickr("#checkin", {
+      dateFormat: "d/m/Y"
+  });
+
+  flatpickr("#checkout", {
+      dateFormat: "d/m/Y"
+  });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+/* style.css */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#000;
+  color:white;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container{
+  width:100%;
+  max-width:430px;
+  text-align:center;
+  padding:20px;
+}
+
+/* LOGO */
+.logo{
+  width:90px;
+  height:90px;
+  object-fit:cover;
+  margin-bottom:15px;
+}
+
+/* TITLE */
+h1{
+  color:#ffd700;
+  font-size:24px;
+  margin-bottom:8px;
+  font-weight:bold;
+}
+
+/* SUBTITLE */
+.subtitle{
+  color:#d9d9d9;
+  font-size:13px;
+  margin-bottom:5px;
+}
+
+/* ICON PESAWAT */
+.plane{
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+/* MENU */
+.menu{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* BUTTON */
+.btn{
+  background:#ffd700;
+  color:#000;
+  text-decoration:none;
+  padding:16px;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:bold;
+  transition:0.3s;
+  box-shadow:0 0 12px rgba(255,215,0,0.25);
+}
+
+.btn i{
+  margin-right:8px;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  background:#ffea00;
+  box-shadow:0 0 18px rgba(255,215,0,0.5);
+}
+
+/* FOOTER */
+footer{
+  margin-top:30px;
+  color:#8d8d8d;
+  font-size:13px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+
+  .container{
+    max-width:350px;
+  }
+
+  h1{
+    font-size:22px;
+  }
+
+  .btn{
+    font-size:15px;
+    padding:14px;
+  }
+
+}

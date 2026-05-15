@@ -1,0 +1,105 @@
+/* harga.css */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#000;
+  color:white;
+  padding:20px;
+}
+
+.container{
+  width:100%;
+  max-width:1100px;
+  margin:auto;
+}
+
+h1{
+  text-align:center;
+  color:#ffd700;
+  margin-bottom:10px;
+  font-size:32px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#bbb;
+  margin-bottom:40px;
+}
+
+/* CARD */
+.card{
+  background:#111;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:30px;
+  border:1px solid #222;
+  box-shadow:0 0 15px rgba(255,215,0,0.1);
+}
+
+.card img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.card-content{
+  padding:20px;
+}
+
+.card-content h2{
+  color:#ffd700;
+  margin-bottom:10px;
+}
+
+.price{
+  font-size:24px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.card-content ul{
+  list-style:none;
+  margin-bottom:20px;
+}
+
+.card-content ul li{
+  margin-bottom:8px;
+  color:#ddd;
+}
+
+/* BUTTON */
+.btn-book{
+  display:inline-block;
+  background:#ffd700;
+  color:black;
+  text-decoration:none;
+  padding:14px 20px;
+  border-radius:12px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn-book:hover{
+  background:#ffea00;
+  transform:translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  h1{
+    font-size:26px;
+  }
+
+  .card img{
+    height:220px;
+  }
+
+}
