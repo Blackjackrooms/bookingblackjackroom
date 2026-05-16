@@ -30,7 +30,7 @@
       <!-- WhatsApp -->
       <div class="input-group">
         <label>Nomor WhatsApp</label>
-        <input type="number" id="wa" placeholder="088290465961" required>
+        <input type="tel" id="wa" placeholder="088290465961" required>
       </div>
 
       <!-- Tanggal Check In -->
@@ -112,6 +112,35 @@
 
 </div>
 
+<!-- QRIS PAYMENT -->
+<div class="payment-box" id="paymentBox">
+
+  <h3>💳 Pembayaran QRIS</h3>
+
+  <p class="payment-text">
+    Silakan scan QRIS di bawah sesuai total pembayaran.
+  </p>
+
+  <!-- TOTAL -->
+  <div class="payment-total">
+    <span>Total Bayar</span>
+    <strong id="paymentTotal">Rp0</strong>
+  </div>
+
+  <!-- QRIS -->
+  <img src="qris.png" alt="QRIS" class="qris-image">
+
+  <!-- Upload Bukti -->
+  <div class="upload-box">
+
+    <label>Upload Bukti Pembayaran</label>
+
+    <input type="file" id="bukti" accept="image/*">
+
+  </div>
+
+</div>
+
       <!-- Catatan -->
       <div class="input-group">
         <label>Catatan Tambahan</label>
@@ -129,7 +158,6 @@
 
   </div>
 
-  <script src="booking.js"></script>
   <script src="booking.js"></script>
 
   <!-- Flatpickr -->

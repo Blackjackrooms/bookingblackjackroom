@@ -8,6 +8,9 @@ const unit = document.getElementById("unit");
 
 const lamaMenginap = document.getElementById("lamaMenginap");
 const totalBayar = document.getElementById("totalBayar");
+const paymentBox = document.getElementById("paymentBox");
+const paymentTotal = document.getElementById("paymentTotal");
+const pembayaranSelect = document.getElementById("pembayaran");
 
 // Harga room
 const hargaRoom = {
@@ -55,6 +58,9 @@ function hitungTotal() {
             lamaMenginap.innerHTML = `${malam} Hari`;
 
             totalBayar.innerHTML =
+                `Rp${total.toLocaleString("id-ID")}`;
+
+             paymentTotal.innerHTML =
                 `Rp${total.toLocaleString("id-ID")}`;
 
         }
@@ -149,5 +155,20 @@ Mohon konfirmasi booking 🙏`;
         `https://wa.me/${admin}?text=${encodeURIComponent(pesan)}`,
         "_blank"
     );
+
+});
+
+// TAMPILKAN QRIS
+pembayaranSelect.addEventListener("change", function(){
+
+    if(this.value === "QRIS"){
+
+        paymentBox.style.display = "block";
+
+    } else {
+
+        paymentBox.style.display = "none";
+
+    }
 
 });

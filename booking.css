@@ -125,3 +125,75 @@ textarea{
   color:#ffd700;
   font-weight:bold;
 }
+
+/* PAYMENT BOX */
+.payment-box{
+  display:none;
+  background:#111;
+  border:1px solid #2a2a2a;
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:20px;
+}
+
+.payment-box h3{
+  color:#ffd700;
+  margin-bottom:10px;
+}
+
+.payment-text{
+  color:#bbb;
+  margin-bottom:20px;
+  font-size:14px;
+}
+
+.payment-total{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+  padding:14px;
+  background:#1a1a1a;
+  border-radius:12px;
+}
+
+.payment-total span{
+  color:#ddd;
+}
+
+.payment-total strong{
+  color:#ffd700;
+  font-size:18px;
+}
+
+/* QRIS */
+.qris-image{
+  width:100%;
+  max-width:280px;
+  display:block;
+  margin:auto;
+  border-radius:16px;
+  margin-bottom:20px;
+  background:white;
+  padding:10px;
+}
+
+/* Upload */
+.upload-box{
+  margin-top:15px;
+}
+
+.upload-box label{
+  display:block;
+  margin-bottom:10px;
+  color:#ddd;
+}
+
+.upload-box input{
+  width:100%;
+  background:#1a1a1a;
+  color:white;
+  border:1px solid #333;
+  padding:12px;
+  border-radius:12px;
+}
