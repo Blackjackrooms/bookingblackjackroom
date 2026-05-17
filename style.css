@@ -14,62 +14,72 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
+  overflow:hidden;
 }
 
+/* CONTAINER */
 .container{
   width:100%;
   max-width:430px;
   text-align:center;
   padding:20px;
+  animation:fadeMain 1.5s ease;
 }
 
 /* LOGO */
 .logo{
-  width:90px;
-  height:90px;
+  width:95px;
+  height:95px;
   object-fit:cover;
-  margin-bottom:15px;
+  margin-bottom:18px;
+  filter:drop-shadow(0 0 15px rgba(255,215,0,0.25));
 }
 
 /* TITLE */
 h1{
   color:#ffd700;
-  font-size:24px;
-  margin-bottom:8px;
+  font-size:26px;
+  margin-bottom:10px;
   font-weight:bold;
+  letter-spacing:1px;
+  text-shadow:0 0 12px rgba(255,215,0,0.3);
 }
 
 /* SUBTITLE */
 .subtitle{
   color:#d9d9d9;
   font-size:13px;
-  margin-bottom:5px;
+  margin-bottom:8px;
+  line-height:1.6;
 }
 
 /* ICON PESAWAT */
 .plane{
   font-size:18px;
-  margin-bottom:20px;
+  margin-bottom:22px;
+  animation:planeMove 2s infinite alternate;
 }
 
 /* MENU */
 .menu{
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:14px;
 }
 
 /* BUTTON */
 .btn{
-  background:#ffd700;
+  background:linear-gradient(135deg,#ffd700,#ffea00);
   color:#000;
   text-decoration:none;
   padding:16px;
-  border-radius:14px;
+  border-radius:16px;
   font-size:16px;
   font-weight:bold;
-  transition:0.3s;
-  box-shadow:0 0 12px rgba(255,215,0,0.25);
+  transition:0.35s;
+  box-shadow:0 0 14px rgba(255,215,0,0.22);
+  position:relative;
+  overflow:hidden;
 }
 
 .btn i{
@@ -77,32 +87,211 @@ h1{
 }
 
 .btn:hover{
-  transform:translateY(-2px);
-  background:#ffea00;
-  box-shadow:0 0 18px rgba(255,215,0,0.5);
+  transform:translateY(-3px) scale(1.01);
+  box-shadow:0 0 22px rgba(255,215,0,0.45);
+}
+
+/* SHINE EFFECT */
+.btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,0.25);
+  transform:skewX(-25deg);
+  transition:0.7s;
+}
+
+.btn:hover::before{
+  left:120%;
 }
 
 /* FOOTER */
 footer{
-  margin-top:30px;
+  margin-top:35px;
   color:#8d8d8d;
   font-size:13px;
+  letter-spacing:1px;
 }
 
 /* RESPONSIVE */
 @media(max-width:600px){
 
   .container{
-    max-width:350px;
+    max-width:360px;
   }
 
   h1{
-    font-size:22px;
+    font-size:23px;
   }
 
   .btn{
     font-size:15px;
-    padding:14px;
+    padding:15px;
   }
 
+}
+
+/* =========================
+   PREMIUM INTRO
+========================= */
+
+#intro{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  z-index:999999;
+  transition:1.2s;
+  opacity:1;
+}
+
+/* Glow */
+.intro-glow{
+  position:absolute;
+  width:550px;
+  height:550px;
+  background:radial-gradient(circle,
+  rgba(255,215,0,0.15),
+  transparent 70%);
+  animation:pulse 3s infinite alternate;
+}
+
+/* Content */
+.intro-content{
+  position:relative;
+  text-align:center;
+  z-index:2;
+  animation:fadeIn 2s ease;
+}
+
+/* Intro Logo */
+.intro-logo{
+  width:120px;
+  margin-bottom:25px;
+  animation:zoomLogo 3s infinite alternate;
+  filter:drop-shadow(0 0 20px rgba(255,215,0,0.45));
+}
+
+/* Intro Title */
+.intro-content h1{
+  color:#ffd700;
+  font-size:34px;
+  letter-spacing:6px;
+  margin-bottom:12px;
+  text-shadow:0 0 18px rgba(255,215,0,0.45);
+}
+
+/* Intro Text */
+.intro-text{
+  color:#ddd;
+  font-size:15px;
+  letter-spacing:2px;
+  margin-bottom:28px;
+}
+
+/* Gold Line */
+.gold-line{
+  width:220px;
+  height:2px;
+  background:#ffd700;
+  margin:auto;
+  margin-bottom:28px;
+  box-shadow:0 0 14px #ffd700;
+}
+
+/* Loading */
+.intro-loading{
+  width:240px;
+  height:6px;
+  background:#1b1b1b;
+  border-radius:50px;
+  overflow:hidden;
+  margin:auto;
+}
+
+.intro-loading span{
+  display:block;
+  height:100%;
+  width:0%;
+  background:#ffd700;
+  border-radius:50px;
+  box-shadow:0 0 14px #ffd700;
+  animation:loadingBar 3s forwards;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes loadingBar{
+  from{
+    width:0%;
+  }
+
+  to{
+    width:100%;
+  }
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes zoomLogo{
+  from{
+    transform:scale(1);
+  }
+
+  to{
+    transform:scale(1.08);
+  }
+}
+
+@keyframes pulse{
+  from{
+    transform:scale(1);
+    opacity:0.6;
+  }
+
+  to{
+    transform:scale(1.2);
+    opacity:1;
+  }
+}
+
+@keyframes planeMove{
+  from{
+    transform:translateX(-5px);
+  }
+
+  to{
+    transform:translateX(5px);
+  }
+}
+
+@keyframes fadeMain{
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity:1;
+  }
 }
